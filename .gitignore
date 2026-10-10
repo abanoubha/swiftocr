@@ -1,9 +1,9 @@
-# macOS system metadata
+# macOS System Files
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Xcode build artifacts & user settings
+# Xcode Build Artifacts & User State
 build/
 DerivedData/
 *.pbxuser
@@ -20,6 +20,9 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
-# Swift Package Manager build folder (if converted later)
+# Swift Package Manager (if added later)
 .build/
 .swiftpm/
+
+# SwiftLint / Local tooling
+.swiftlint-cache
