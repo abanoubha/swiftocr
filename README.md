@@ -18,6 +18,10 @@ Designed with full support for complex scripts, SwiftOCR provides dynamic langua
 
 ---
 
+![user interface](swiftocr.png "user interface")
+
+---
+
 ## User Interface
 
 
