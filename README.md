@@ -1,31 +1,25 @@
-# macocr
+# SwiftOCR
 
-`macocr` is a fast, lightweight command-line OCR tool for macOS built on Apple's native **Vision framework**. It runs on-device without external neural network models, APIs, or C++ dependencies.
+`SwiftOCR` is a native macOS desktop application built with **SwiftUI** and Apple's **Vision framework** that performs real-time on-device Optical Character Recognition (OCR).
 
 ## Features
 
-- **Native Speed:** Uses Apple Vision neural engine (`VNRecognizeTextRequest`).
-- **Multilingual Support:** Supports English, Arabic (`ar-SA`), and combined/auto-detection modes.
-- **RTL Script Support:** Handles complex Arabic script alignment and diacritics using Vision Revision 3.
-- **Structured JSON Output:** Exports recognized lines, confidence scores, and normalized bounding box coordinates (`x`, `y`, `width`, `height`).
-- **Zero Dependencies:** Pure Swift framework integration (`Vision` + `AppKit`).
+- **On-Device Machine Learning:** Powered by Apple Vision (`VNRecognizeTextRequest`) — zero external dependencies or cloud APIs required.
+- **Bilingual OCR:** Native recognition for English and Arabic (`ar-SA`) scripts, including complex script alignment and diacritics.
+- **Dynamic Language Selection:** Switch between *Auto Detect*, *Arabic & English*, *Arabic Only*, and *English Only* modes.
+- **Visual Bounding Box Overlays:** Renders detected text block bounding boxes scaled over the source image.
+- **Interactive Hover Sync:** Hovering over a bounding box highlights the corresponding text line in the sidebar list (and vice versa).
+- **Drag-and-Drop Interface:** Drop any image directly onto the app workspace or select via `NSOpenPanel`.
 
 ## Requirements
 
 - macOS 13.0 (Ventura) or later
-- Xcode 14+ or Swift toolchain (`swiftc`)
+- Xcode 14.0+
 
-## Build & Install
+## Building from Source
 
-### Quick Compilation via Terminal
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/abanoubha/swiftocr.git
+   ```
 
-```bash
-# Clone repository
-git clone [https://github.com/YOUR_USERNAME/macocr.git](https://github.com/YOUR_USERNAME/macocr.git)
-cd macocr
-
-# Compile executable with release optimizations
-swiftc -O main.swift -framework Vision -framework AppKit -o macocr
-
-# Install to binary path
-sudo mv macocr /usr/local/bin/
